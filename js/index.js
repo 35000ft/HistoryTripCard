@@ -50,7 +50,9 @@ var app = new Vue({
         },
         addCities() {
             this.cities.forEach((city) => {
-                city = this.province + city;
+                if (this.province != city) {
+                    city = this.province + city;
+                }
                 this.totalCities.push(city);
             })
             this.province = '';
